@@ -29,29 +29,29 @@ export default function Home() {
   };
   const buttonData: ButtonProps[] = [
     {
-      children: "Spotify",
+      children: "spotify",
       onClick: handleButtonClick("spotify"),
     },
     {
-      children: "Apple Music",
+      children: "apple music",
       onClick: handleButtonClick("apple"),
     },
     {
-      children: "Bandcamp",
+      children: "bandcamp",
       onClick: handleButtonClick("bandcamp"),
     },
     {
-      children: "SoundCloud",
+      children: "soundcloud",
       onClick: handleButtonClick("soundcloud"),
     },
   ];
   return (
     <>
       <Background />
-      <main className="flex min-h-screen flex-col items-center justify-between z-10">
-        <div className="max-w-screen-sm flex-grow pt-32 flex flex-col gap-12">
+      <main className="flex min-h-screen flex-col items-center justify-between z-10 pt-24 px-4">
+        <div className="w-full max-w-screen-sm flex-grow flex flex-col gap-16 text-center">
           <h1 className="text-white text-6xl">literally the moon</h1>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {buttonData.map((buttonProps, index) => (
               <Button key={index} {...buttonProps} className="w-full" />
             ))}

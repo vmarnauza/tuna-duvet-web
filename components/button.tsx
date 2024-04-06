@@ -30,11 +30,13 @@ export default function Button({
 }: ButtonProps) {
   const typeClasses = getButtonTypeClasses(type);
   const sizeClasses = getButtonSizeClasses(size);
-  const transitionClasses = disableTransition ? null : "hover:bg-opacity-90";
+  const shadowClasses = "";
+  // "shadow-[inset_1px_0_#a855f7,_inset_-1px_0_#a855f7,_inset_0_1px_#a855f7,_inset_0_-3px_#a855f7]";
+  const transitionClasses = disableTransition ? null : "transition-all";
   const stateClasses =
-    "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400";
+    "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 hover:outline-double hover:outline-8";
   const loadingClasses = loading && "pointer-events-none";
-  const classes = `${typeClasses} ${sizeClasses} ${stateClasses} ${transitionClasses} ${loadingClasses}`;
+  const classes = `${typeClasses} ${sizeClasses} ${stateClasses} ${transitionClasses} ${loadingClasses} ${shadowClasses}`;
   const loaderMarkup = loading ? (
     <div
       className={`absolute top-0 left-0 w-full h-full flex justify-center items-center ${classes}`}
@@ -45,7 +47,7 @@ export default function Button({
 
   return (
     <button
-      className={`relative flex justify-center items-center flex-nowrap gap-2 rounded-[32px] font-medium overflow-hidden whitespace-nowrap border ${classes} ${className}`}
+      className={`relative flex justify-center items-center flex-nowrap gap-2 rounded-[32px] font-medium overflow-hidden whitespace-nowrap ${classes} ${className}`}
       disabled={disabled}
       onClick={onClick}
       type={isSubmit ? "submit" : "button"}
@@ -60,12 +62,12 @@ export default function Button({
 function getButtonTypeClasses(type: ButtonType): string {
   switch (type) {
     case "secondary":
-      return "text-black bg-white border-black";
+      return "border text-black bg-white border-black";
     case "highlighted":
       return "bg-lime-500 text-white border-gray-900";
     case "primary":
     default:
-      return "text-white bg-gray-900 border-purple-400";
+      return "text-white bg-gray-900 outline outline-purple-400 outline-offset-4";
   }
 }
 
