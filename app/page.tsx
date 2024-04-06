@@ -55,7 +55,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl tracking-tight">
               literally the moon
             </h1>
-            <p>i&apos;m all over the place</p>
+            {/* <p>i&apos;m all over the place</p> */}
           </div>
           <div className="flex flex-col gap-8">
             {buttonData.map((buttonProps, index) => (

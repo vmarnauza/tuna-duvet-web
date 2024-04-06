@@ -32,7 +32,9 @@ export default function Button({
   const sizeClasses = getButtonSizeClasses(size);
   const shadowClasses = "";
   // "shadow-[inset_1px_0_#a855f7,_inset_-1px_0_#a855f7,_inset_0_1px_#a855f7,_inset_0_-3px_#a855f7]";
-  const transitionClasses = disableTransition ? null : "transition-all";
+  const transitionClasses = disableTransition
+    ? null
+    : "transition-all duration-200";
   const stateClasses =
     "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 md:hover:outline-double md:hover:outline-8";
   const loadingClasses = loading && "pointer-events-none";
@@ -47,7 +49,7 @@ export default function Button({
 
   return (
     <button
-      className={`relative flex justify-center items-center flex-nowrap gap-2 rounded-[32px] font-medium overflow-hidden whitespace-nowrap ${classes} ${className}`}
+      className={`relative flex justify-center items-center flex-nowrap gap-2 rounded-[32px] shadow-2xl shadow-black font-medium whitespace-nowrap ${classes} ${className}`}
       disabled={disabled}
       onClick={onClick}
       type={isSubmit ? "submit" : "button"}
