@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <>
       <Background />
-      <main className="flex min-h-screen flex-col items-center justify-between z-10 pt-24 px-4">
+      <main className="flex min-h-screen flex-col items-center justify-between z-10 py-24 px-4">
         <div className="w-full max-w-screen-sm flex-grow flex flex-col gap-16 text-center">
           <h1 className="text-white text-6xl">literally the moon</h1>
           <div className="flex flex-col gap-8">

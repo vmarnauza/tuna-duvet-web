@@ -14,7 +14,7 @@ export default function Background() {
   });
 
   return (
-    <div className="w-screen h-screen absolute left-0 top-0 -z-10 overflow-hidden">
+    <div className="w-screen h-screen fixed left-0 top-0 -z-10 overflow-hidden">
       <canvas ref={canvasRef} />
     </div>
   );
