@@ -4,7 +4,7 @@ import Button, { ButtonProps } from "@/components/button";
 
 const buttonIds = [
   "spotify",
-  "apple",
+  "apple music",
   "bandcamp",
   "soundcloud",
   "tiktok",
@@ -21,7 +21,7 @@ export default function Home() {
           "_blank"
         );
         break;
-      case "apple":
+      case "apple music":
         window.open(
           "https://music.apple.com/fr/artist/literally-the-moon/1736386562",
           "_blank"
