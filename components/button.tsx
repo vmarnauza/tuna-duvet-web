@@ -34,7 +34,7 @@ export default function Button({
   // "shadow-[inset_1px_0_#a855f7,_inset_-1px_0_#a855f7,_inset_0_1px_#a855f7,_inset_0_-3px_#a855f7]";
   const transitionClasses = disableTransition ? null : "transition-all";
   const stateClasses =
-    "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 hover:outline-double hover:outline-8";
+    "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 md:hover:outline-double md:hover:outline-8";
   const loadingClasses = loading && "pointer-events-none";
   const classes = `${typeClasses} ${sizeClasses} ${stateClasses} ${transitionClasses} ${loadingClasses} ${shadowClasses}`;
   const loaderMarkup = loading ? (
