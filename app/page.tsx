@@ -9,6 +9,7 @@ const buttonIds = [
   "soundcloud",
   "tiktok",
   "instagram",
+  "email",
 ] as const;
 type ButtonId = (typeof buttonIds)[number];
 
@@ -38,6 +39,9 @@ export default function Home() {
         break;
       case "instagram":
         window.open("https://www.instagram.com/literallymoonmusic/", "_blank");
+        break;
+      case "email":
+        window.open("mailto:literallythemoonmusic@gmail.com", "_blank");
         break;
     }
   };
