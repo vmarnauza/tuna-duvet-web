@@ -51,7 +51,12 @@ export default function Home() {
       <Background />
       <main className="flex min-h-screen flex-col items-center justify-between z-10 py-24 px-4">
         <div className="w-full max-w-screen-sm flex-grow flex flex-col gap-16 text-center">
-          <h1 className="text-white text-6xl">literally the moon</h1>
+          <div className="flex flex-col gap-4 text-white opacity-85">
+            <h1 className="text-4xl md:text-6xl tracking-tight">
+              literally the moon
+            </h1>
+            <p>i&apos;m all over the place</p>
+          </div>
           <div className="flex flex-col gap-8">
             {buttonData.map((buttonProps, index) => (
               <Button key={index} {...buttonProps} className="w-full" />
