@@ -2,7 +2,15 @@
 import Background from "@/components/background";
 import Button, { ButtonProps } from "@/components/button";
 
-type ButtonId = "spotify" | "apple" | "soundcloud" | "bandcamp";
+const buttonIds = [
+  "spotify",
+  "apple",
+  "bandcamp",
+  "soundcloud",
+  "tiktok",
+  "instagram",
+] as const;
+type ButtonId = (typeof buttonIds)[number];
 
 export default function Home() {
   const handleButtonClick = (id: ButtonId) => () => {
@@ -25,26 +33,19 @@ export default function Home() {
       case "soundcloud":
         window.open("https://soundcloud.com/literally-the-moon", "_blank");
         break;
+      case "tiktok":
+        window.open("https://www.tiktok.com/@literallymoonmusic", "_blank");
+        break;
+      case "instagram":
+        window.open("https://www.instagram.com/literallymoonmusic/", "_blank");
+        break;
     }
   };
-  const buttonData: ButtonProps[] = [
-    {
-      children: "spotify",
-      onClick: handleButtonClick("spotify"),
-    },
-    {
-      children: "apple music",
-      onClick: handleButtonClick("apple"),
-    },
-    {
-      children: "bandcamp",
-      onClick: handleButtonClick("bandcamp"),
-    },
-    {
-      children: "soundcloud",
-      onClick: handleButtonClick("soundcloud"),
-    },
-  ];
+  const buttonData: ButtonProps[] = buttonIds.map((id) => ({
+    children: id,
+    onClick: handleButtonClick(id),
+  }));
+
   return (
     <>
       <Background />
