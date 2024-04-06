@@ -2,6 +2,8 @@
 
 A website for literally the moon
 
+[https://literallythemoon.com](https://literallythemoon.com)
+
 ## Getting Started
 
 First, run the development server:
