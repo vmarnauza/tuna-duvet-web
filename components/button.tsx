@@ -69,7 +69,7 @@ function getButtonTypeClasses(type: ButtonType): string {
       return "bg-lime-500 text-white border-gray-900";
     case "primary":
     default:
-      return "text-white bg-gray-900 outline outline-purple-400 outline-offset-4";
+      return "text-white bg-gray-900 outline outline-gray-100 outline-offset-4";
   }
 }
 
