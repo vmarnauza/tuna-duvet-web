@@ -1,8 +1,8 @@
 # ltm web
 
-A website for literally the moon
+A website for tuna duvet
 
-[https://literallythemoon.com](https://literallythemoon.com)
+[https://tunaduvet.com](https://tunaduvet.com)
 
 ## Getting Started
 
