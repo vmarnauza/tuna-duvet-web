@@ -36,7 +36,7 @@ export default function Button({
     ? null
     : "transition-all duration-200";
   const stateClasses =
-    "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 md:hover:outline-double md:hover:outline-8";
+    "disabled:bg-gray-200 disabled:border-gray-200 disabled:text-gray-400 md:hover:outline md:hover:outline-8";
   const loadingClasses = loading && "pointer-events-none";
   const classes = `${typeClasses} ${sizeClasses} ${stateClasses} ${transitionClasses} ${loadingClasses} ${shadowClasses}`;
   const loaderMarkup = loading ? (
@@ -49,7 +49,7 @@ export default function Button({
 
   return (
     <button
-      className={`relative flex justify-center items-center flex-nowrap gap-2 rounded-[32px] shadow-2xl shadow-black font-medium whitespace-nowrap ${classes} ${className}`}
+      className={`relative flex justify-center items-center flex-nowrap gap-2 rounded-[32px]  shadow-black font-medium whitespace-nowrap ${classes} ${className}`}
       disabled={disabled}
       onClick={onClick}
       type={isSubmit ? "submit" : "button"}
@@ -69,7 +69,7 @@ function getButtonTypeClasses(type: ButtonType): string {
       return "bg-lime-500 text-white border-gray-900";
     case "primary":
     default:
-      return "text-white bg-gray-900 outline outline-gray-100 outline-offset-4";
+      return "text-white bg-purple-500 outline outline-purple-500";
   }
 }
 
