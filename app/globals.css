@@ -3,15 +3,12 @@
 @tailwind utilities;
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .h1 {
+    @apply text-5xl md:text-8xl font-bold tracking-tight;
   }
 
-  .cute button {
-    transform: scale(1);
-  }
-
-  .cute button:hover {
+  .cute button:hover,
+  .cute a:hover {
     animation: grow 8s 1;
   }
 

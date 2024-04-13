@@ -1,24 +1,34 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 export default function Background() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const firstRenderDone = useRef(false);
 
+  const handleResize = useCallback(() => {
+    initBackground();
+  }, []);
+
   useEffect(() => {
-    if (canvasRef.current && !firstRenderDone.current) {
-      initBackground(canvasRef.current);
+    if (!firstRenderDone.current) {
+      initBackground();
+      window.addEventListener("resize", handleResize);
       firstRenderDone.current = true;
     }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   });
 
   return (
-    <div className="w-screen h-screen fixed left-0 top-0 -z-10 overflow-hidden">
-      <canvas ref={canvasRef} />
-    </div>
+    <div
+      id="background"
+      className="w-screen h-screen fixed left-0 top-0 -z-10 overflow-hidden"
+    ></div>
   );
 }
 
-function initBackground(canvas: HTMLCanvasElement) {
+function initBackground() {
+  const canvas = document.createElement("canvas");
   const startTime = new Date().getTime(); // Get start time for animating
   let currentTime = 0;
   const gl: WebGLRenderingContext | null = canvas.getContext("webgl");
@@ -98,6 +108,10 @@ function initBackground(canvas: HTMLCanvasElement) {
     gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   };
+
+  const background = document.getElementById("background");
+  background?.children[0]?.remove();
+  background?.appendChild(canvas);
 
   render();
 }
